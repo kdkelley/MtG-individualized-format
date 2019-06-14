@@ -13,14 +13,12 @@
       }
 
       function checkLegality() {
-        var birthMonth = getValue("birthMonth");
-        var birthDay = getValue("birthDay");
-        var birthYear = getValue("birthYear");
+        var uniqueIdentifier = getValue("uniqueIdentifier");
         var setCode = getValue("setCode");
         var legalPercent = parseInt(getValue("legalPercentage"), 10);
         var cardName = getValue("cardName");
 
-        var hashString = birthMonth + birthDay + birthYear + setCode + cardName;
+        var hashString = uniqueIdentifier + setCode + cardName;
         var hash = (hashFnv32a(hashString) % 100) + 1;
 
         var groupNumber = Math.floor(hash / legalPercent);
@@ -60,17 +58,11 @@
 
   <body>
 
-    Birthdate:</br>
-    Month:<input type="text" id="birthMonth" /></br>
-    Day:<input type="text" id="birthDay" /></br>
-    Year:<input type="text" id="birthYear" /></br>
-
+    Unique Player Identifier (your name or birthdate):<input type="text" id="uniqueIdentifier" /></br>
     Set-Code of last released set:<input type="text" id="setCode" /></br>
-
     </br>
 
     Legal Percentage:<input type="text" id="legalPercentage" /></br>
-
     Card Name: <input type="text" id="cardName" /></br>
 
     <input type="button" onclick="checkLegality()" value="Check Legality"></input></br>
