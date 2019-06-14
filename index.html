@@ -59,7 +59,7 @@
   <body>
 
     Unique Player Identifier (your name or birthdate):<input type="text" id="uniqueIdentifier" /></br>
-    Set-Code of last released set:<input type="text" id="setCode" /></br>
+    Group/Event Identifier (optional):<input type="text" id="setCode" /></br>
     </br>
 
     Legal Percentage:<input type="text" id="legalPercentage" /></br>
@@ -68,6 +68,26 @@
     <input type="button" onclick="checkLegality()" value="Check Legality"></input></br>
 
     <span id="output"></span>
+
+    </br>
+
+    <p>
+      This little tool is a tiny thought experiment on ways to defeat netdecking, and given lesser used cards a chance to shine.
+      Essentially, it is a tool to "bin" all MtG cards into groups, which vary based on the unique player identifier and a unique group identifier.
+      (Although if you leave that blank it doesn't matter.) The idea is that each player has a unique cardpool, generated in this fashion, and that then they have
+      to adapt to the cards that are legal for them, and that no one else has the same card pool to draw from.
+    </p>
+
+    <p>
+      When a card name is given, the above tool generates a legality group number. This group number can be used in a few different ways. For example, players
+      could either all be forced to use the same group number (group number 0), or every player could have to make a deck, where every card was from the same
+      group number (for example, a player could use all cards from group number 0, or from group number 1)
+    </p>
+
+    <p>
+      In particular I think this would be interesting in online constructed environments, where it adds another dimension to deckbuilding, and prevents anyone
+      from showing up with a straight netdeck (most of the time). This also means that you might have to use less powerful substitutes for other cards.
+    </p>
 
   </body>
 
